@@ -1,0 +1,49 @@
+{
+  "editor.tabSize": 2,
+  // TypeScript & JavaScript
+  // ESLint
+  "eslint.workingDirectories": ["."],
+  "eslint.options": {
+    "configFile": ".eslintrc.js"
+  },
+  "eslint.lintTask.options": ". --ext .ts,.tsx --fix",
+  "eslint.validate": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact"
+  ],
+  "eslint.alwaysShowStatus": true,
+  // Stylelint
+  "stylelint.enable": true,
+  "stylelint.configBasedir": ".",
+  "stylelint.configOverrides": {
+    "ignoreFiles": ["**/*.js", "**/*.ts", "**/*.tsx"]
+  },
+  // prettier
+  "prettier.requireConfig": true,
+  "prettier.disableLanguages": [
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
+    "css",
+    "scss"
+  ],
+  // Lint On Save
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true,
+    "source.fixAll.prettier": true
+  },
+  "[json]": {
+    "editor.formatOnSave": true
+  },
+  "[jsonc]": {
+    "editor.formatOnSave": true
+  },
+  // Invalidate other formatters
+  "css.validate": false,
+  "scss.validate": false
+}
