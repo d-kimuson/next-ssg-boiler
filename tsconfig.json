@@ -8,6 +8,8 @@
       "@path": ["lib/$path.ts"],
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
+      "@store": ["store"],
+      "@store/*": ["store/*"],
       "@styles/*": ["styles/*"],
       "@public/*": ["public/*"]
     },
