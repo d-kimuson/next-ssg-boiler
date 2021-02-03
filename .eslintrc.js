@@ -1,36 +1,25 @@
 module.exports = {
-  parser: '@typescript-eslint/parser',
+  parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: './tsconfig.json',
+    project: "./tsconfig.json",
   },
   extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
   ],
-  plugins: [
-    'react',
-    '@typescript-eslint'
-  ],
+  plugins: ["react", "@typescript-eslint"],
   rules: {
-    '@typescript-eslint/ban-ts-ignore': 'off',
-    '@typescript-eslint/ban-ts-comment': 'off',
-    quotes: "off",
-    '@typescript-eslint/quotes': [
-      2,
-      'backtick',
-      {
-        avoidEscape: true,
-      },
-    ],
-    'react/react-in-jsx-scope': 'off',
-    'no-console': 'off',
+    "@typescript-eslint/ban-ts-ignore": "off",
+    "@typescript-eslint/ban-ts-comment": "off",
+    "react/react-in-jsx-scope": "off",
+    "no-console": "off",
   },
-  "settings": {
-    "react": {
-      "version": "detect"
-    }
-  }
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
 }

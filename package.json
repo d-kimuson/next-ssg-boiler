@@ -9,15 +9,18 @@
     "build": "pathpida && next build && next export",
     "start": "yarn build && http-server out -p 80",
     "typecheck": "tsc -p . --noEmit",
+    "lint": "yarn typecheck && run-p lint:*",
+    "lint:eslint": "eslint src --ext .ts,.tsx,.jsx",
+    "lint:stylelint": "stylelint 'src/styles/**/*.{css,scss}'",
     "fix": "run-p fix:*",
-    "fix:eslint": "eslint src --ext .ts,.tsx --fix",
-    "fix:prettier": "prettier '**/*.json' --write",
-    "fix:stylelint": "stylelint 'src/styles/**/*.scss' --fix",
+    "fix:eslint": "yarn lint:eslint --fix",
+    "fix:stylelint": "yarn lint:stylelint --fix",
+    "fix:prettier": "prettier '**/*.{ts,tsx,js,jsx,json,css,scss}' --write",
     "test": "jest"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn typecheck && yarn fix"
+      "pre-commit": "yarn lint"
     }
   },
   "dependencies": {
@@ -33,8 +36,7 @@
     "@typescript-eslint/eslint-plugin": "^4.12.0",
     "@typescript-eslint/parser": "^4.12.0",
     "eslint": "^7.17.0",
-    "eslint-config-prettier": "^7.1.0",
-    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-react": "^7.22.0",
     "http-server": "^0.12.3",
     "husky": "^4.3.7",
@@ -47,7 +49,6 @@
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recommended": "^3.0.0",
     "stylelint-config-standard-scss": "^1.1.0",
-    "stylelint-prettier": "^1.1.2",
     "stylelint-scss": "^3.18.0",
     "ts-jest": "^26.4.4",
     "tsc": "^1.20150623.0",
