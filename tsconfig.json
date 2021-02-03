@@ -1,6 +1,6 @@
 {
-  "extends": "@tsconfig/node14",
   "compilerOptions": {
+    "target": "esnext",
     "module": "esnext",
     "lib": ["dom", "esnext"],
     "baseUrl": "./src",
@@ -8,17 +8,20 @@
       "@path": ["lib/$path.ts"],
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
-      "@public/*": ["public/*"],
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["styles/*"],
+      "@public/*": ["public/*"]
     },
-    "moduleResolution": "node",
+    "strict": true,
     "jsx": "preserve",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
     "allowJs": true,
+    "skipLibCheck": true,
     "noEmit": true,
     "resolveJsonModule": true,
     "isolatedModules": true
   },
   "files": ["./@types/globals.d.ts", "./@types/vendors.d.ts"],
-  "include": ["next-env.d.ts", "src/**/*"],
+  "include": ["src/**/*"],
   "exclude": ["dist", "out", "node_modules", "tests"]
 }
