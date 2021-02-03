@@ -3,7 +3,7 @@
   "compilerOptions": {
     "module": "esnext",
     "lib": ["dom", "esnext"],
-    "baseUrl": "./",
+    "baseUrl": "./src",
     "paths": {
       "@path": ["lib/$path.ts"],
       "@components/*": ["components/*"],
@@ -19,6 +19,6 @@
     "isolatedModules": true
   },
   "files": ["./@types/globals.d.ts", "./@types/vendors.d.ts"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "src/**/*"],
   "exclude": ["dist", "out", "node_modules", "tests"]
 }

@@ -10,9 +10,9 @@
     "start": "yarn build && http-server out -p 80",
     "check:type": "tsc -p . --noEmit",
     "fix": "run-p fix:*",
-    "fix:eslint": "eslint . --ext .ts,.tsx --fix",
+    "fix:eslint": "eslint src --ext .ts,.tsx --fix",
     "fix:prettier": "prettier '**/*.json' --write",
-    "fix:stylelint": "stylelint './styles/**/*.scss' --fix",
+    "fix:stylelint": "stylelint 'src/styles/**/*.scss' --fix",
     "test": "jest"
   },
   "husky": {
