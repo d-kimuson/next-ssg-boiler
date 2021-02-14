@@ -1,7 +1,7 @@
 {
   "editor.tabSize": 2,
   // ESLint
-  "eslint.workingDirectories": ["./src"],
+  "eslint.workingDirectories": ["./"],
   "eslint.options": {
     "configFile": ".eslintrc.js"
   },
