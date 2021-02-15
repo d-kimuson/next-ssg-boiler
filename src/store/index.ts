@@ -1,5 +1,4 @@
 import { combineReducers } from "redux"
-import type { EnhancedStore } from "@reduxjs/toolkit"
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit"
 import logger from "redux-logger"
 
@@ -10,15 +9,11 @@ const preloadedState = (): RootState => {
   return {}
 }
 
-const createStore = (): EnhancedStore<RootState> => {
-  const middlewareList = [...getDefaultMiddleware(), logger]
+export const store = configureStore({
+  reducer: rootReducer,
+  middleware: [...getDefaultMiddleware(), logger],
+  devTools: process.env.NODE_ENV !== "production",
+  preloadedState: preloadedState(),
+})
 
-  return configureStore({
-    reducer: rootReducer,
-    middleware: middlewareList,
-    devTools: process.env.NODE_ENV !== "production",
-    preloadedState: preloadedState(),
-  })
-}
-
-export default createStore
+export type AppDispatch = typeof store.dispatch
