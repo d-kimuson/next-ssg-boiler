@@ -3,7 +3,8 @@
   // ESLint
   "eslint.workingDirectories": ["./"],
   "eslint.options": {
-    "configFile": ".eslintrc.js"
+    "configFile": ".eslintrc.js",
+    "extensions": ["ts", "tsx", "js", "jsx"]
   },
   "eslint.validate": [
     "javascript",
