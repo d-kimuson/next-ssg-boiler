@@ -7,6 +7,7 @@
     "paths": {
       "@path": ["lib/$path.ts"],
       "@components/*": ["components/*"],
+      "@hooks/*": ["hooks/*"],
       "@pages/*": ["pages/*"],
       "@store": ["store"],
       "@store/*": ["store/*"],
