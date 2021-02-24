@@ -1,34 +1,83 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next SSG Boiler
 
-## Getting Started
+[Next.js](https://nextjs.org/) ベースのSSGアプリケーションまたはサイト構築用のボイラープレートです
 
-First, run the development server:
+## 新しいプロジェクトを始める
 
-```bash
-npm run dev
-# or
-yarn dev
+[Node.js](https://nodejs.org/en/) と [yarn](https://yarnpkg.com/) が必要です
+
+``` bash
+$ git clone git@github.com:d-kimuson/ts-sass-postcss-boiler.git myapp && cd myapp
+$ git remote remove origin
+$ yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+`package.json` から `name` 属性を書き換えます
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+``` bash
+$ yarn dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+で開発サーバーが起動します
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Linter
 
-## Learn More
+このリポジトリでは
 
-To learn more about Next.js, take a look at the following resources:
+- [ESLint](https://eslint.org/)
+- [stylelint](https://stylelint.io/)
+- [prettier](https://prettier.io/)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+を導入していて、以下のスクリプトで実行できます
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+``` bash
+$ yarn lint  # コードチェック
+$ yarn fix   # 自動修正
+```
 
-## Deploy on Vercel
+## ルーティング
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+ルーティングを静的に検査できる [aspida/pathpida](https://github.com/aspida/pathpida) を導入しています
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+`src/utils/$path.ts` が自動生成され、`pagesPath` にルーティング型が定義されるので、以下のようにして型安全にリンクを貼ることができます
+
+``` tsx:sample.tsx
+import Link from "next/link"
+import { pagesPath } from "@path"
+
+<Link href={pagesPath.$url()}>click me</Link>
+```
+
+## グローバルステート
+
+グローバルの状態管理に [Redux](https://redux.js.org/) を使います
+
+`useDispatch` は型付けされたカスタムフックが定義されているので、こちらを使用してください
+
+``` ts
+import { useDispatch } from "~/hooks/store"
+```
+
+## テスト
+
+テストツールとして、[Jest](https://jestjs.io/) を導入しています
+
+``` bash
+$ yarn test
+```
+
+で実行することができます
+
+## デプロイする
+
+``` bash
+$ yarn build
+```
+
+で配信可能なビルドファイルが `out` 下に生成されます
+
+``` bash
+$ yarn start
+```
+
+で、http://localhost からビルドファイルが配信されるので、簡易的にローカルで本番環境を再現できます

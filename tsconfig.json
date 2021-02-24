@@ -5,17 +5,9 @@
     "lib": ["dom", "esnext"],
     "baseUrl": "./src",
     "paths": {
-      "@api/*": ["api/*"],
-      "@components/*": ["components/*"],
-      "@hooks/*": ["hooks/*"],
-      "@lib/*": ["lib/*"],
-      "@pages/*": ["pages/*"],
-      "@store": ["store"],
-      "@store/*": ["store/*"],
-      "@styles/*": ["styles/*"],
-      "@public/*": ["public/*"],
-      "@path": ["lib/$path.ts"],
-      "types/*": ["types/*"]
+      "~/*": ["*"],
+      "@path": ["utils/$path.ts"],
+      "@public/*": ["public/*"]
     },
     "strict": true,
     "jsx": "preserve",

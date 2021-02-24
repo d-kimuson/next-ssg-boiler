@@ -5,5 +5,5 @@ interface GreetProps {
 }
 
 export const Greet: React.FC<GreetProps> = ({ name }: GreetProps) => {
-  return <div>Hello! {name}</div>
+  return <div>Hello! {name}!</div>
 }
