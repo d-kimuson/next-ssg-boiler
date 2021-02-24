@@ -1,9 +1,15 @@
 import Head from "next/head"
 
-import { Greet } from "~/components/greet"
 import styles from "~/styles/modules/Home.module.scss"
+import { Greet } from "~/components/greet"
+import exampleSlice from "~/store/example"
+import { useDispatch } from "~/hooks/store"
+import { useUserName } from "~/hooks/store/example"
 
 export default function Home(): JSX.Element {
+  const userName = useUserName()
+  const dispatch = useDispatch()
+
   return (
     <div className={styles.container}>
       <Head>
@@ -16,7 +22,24 @@ export default function Home(): JSX.Element {
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
-        <Greet name={`Taro!`} />
+        <Greet name={userName ?? ""} />
+
+        <input
+          type="text"
+          placeholder="Input user name"
+          value={userName ?? ""}
+          onChange={(e) => {
+            dispatch(exampleSlice.actions.setUserName(e.target.value))
+          }}
+        />
+
+        <button
+          onClick={() => {
+            dispatch(exampleSlice.actions.resetUserName())
+          }}
+        >
+          RESET
+        </button>
       </main>
 
       <footer className={styles.footer}>

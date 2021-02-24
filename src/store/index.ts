@@ -2,11 +2,17 @@ import { combineReducers } from "redux"
 import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit"
 import logger from "redux-logger"
 
-const rootReducer = combineReducers({})
+import exampleSlice, { initialState as exampleState } from "./example"
+
+const rootReducer = combineReducers({
+  example: exampleSlice.reducer,
+})
 export type RootState = ReturnType<typeof rootReducer>
 
 const preloadedState = (): RootState => {
-  return {}
+  return {
+    example: exampleState,
+  }
 }
 
 export const store = configureStore({
