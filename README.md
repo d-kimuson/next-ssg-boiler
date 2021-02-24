@@ -58,6 +58,30 @@ import { pagesPath } from "@path"
 import { useDispatch } from "~/hooks/store"
 ```
 
+`src/store/index.ts` で `whitelist` に追加するとステートがローカルストレージと同期します
+
+``` ts:src/store/index.ts
+const persistedReducer = persistReducer(
+  {
+    key: "root",
+    storage,
+    whitelist: ["example"],
+  },
+  rootReducer
+)
+```
+
+ローカルストレージから読みだしたステートで表示を出し分ける場合(ログインなど)は、`ClientSideRender` コンポーネントでラップすることでレンダリングを遅延できます
+
+``` tsx:sample-page.tsx
+import { ClientSideRender } from "~/components/ClientSideRender"
+
+<div>サーバーサイドでレンダリングされる</div>
+<ClientSideRender>
+  <div>クライアントサイドでレンダリングされる</div>
+</ClientSideRender>
+```
+
 ## テスト
 
 テストツールとして、[Jest](https://jestjs.io/) を導入しています
