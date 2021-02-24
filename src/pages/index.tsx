@@ -1,7 +1,8 @@
 import Head from "next/head"
 
 import styles from "~/styles/modules/Home.module.scss"
-import { Greet } from "~/components/greet"
+import { Greet } from "~/components/Greet"
+import { ClientSideRender } from "~/components/ClientSideRender"
 import exampleSlice from "~/store/example"
 import { useDispatch } from "~/hooks/store"
 import { useUserName } from "~/hooks/store/example"
@@ -21,6 +22,10 @@ export default function Home(): JSX.Element {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
+
+        <ClientSideRender>
+          <Greet name={userName ?? ""} />
+        </ClientSideRender>
 
         <Greet name={userName ?? ""} />
 
