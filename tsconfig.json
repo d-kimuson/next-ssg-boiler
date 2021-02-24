@@ -5,12 +5,8 @@
     "lib": ["dom", "esnext"],
     "baseUrl": "./src",
     "paths": {
-      "@path": ["lib/$path.ts"],
-      "@components/*": ["components/*"],
-      "@pages/*": ["pages/*"],
-      "@store": ["store"],
-      "@store/*": ["store/*"],
-      "@styles/*": ["styles/*"],
+      "~/*": ["*"],
+      "@path": ["utils/$path.ts"],
       "@public/*": ["public/*"]
     },
     "strict": true,

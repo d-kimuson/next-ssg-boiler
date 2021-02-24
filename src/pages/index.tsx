@@ -1,7 +1,7 @@
 import Head from "next/head"
 
-import { Greet } from "@components/greet"
-import styles from "@styles/modules/Home.module.scss"
+import { Greet } from "~/components/greet"
+import styles from "~/styles/modules/Home.module.scss"
 
 export default function Home(): JSX.Element {
   return (
