@@ -1,9 +1,11 @@
-import React from "react"
+import { memo } from "react"
 
 interface GreetProps {
   name: string
 }
 
-export const Greet: React.FC<GreetProps> = ({ name }: GreetProps) => {
+const Component: React.VFC<GreetProps> = ({ name }: GreetProps) => {
   return <div>Hello! {name}!</div>
 }
+
+export const Greet = memo(Component)

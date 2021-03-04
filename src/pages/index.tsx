@@ -7,7 +7,7 @@ import exampleSlice from "~/store/example"
 import { useDispatch } from "~/hooks/store"
 import { useUserName } from "~/hooks/store/example"
 
-export default function Home(): JSX.Element {
+const Home: React.VFC = () => {
   const userName = useUserName()
   const dispatch = useDispatch()
 
@@ -60,3 +60,5 @@ export default function Home(): JSX.Element {
     </div>
   )
 }
+
+export default Home

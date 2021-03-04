@@ -4,7 +4,7 @@ import { Provider } from "react-redux"
 import "~/styles/globals/index.scss"
 import { store } from "~/store"
 
-function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+const MyApp: React.VFC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
     <Provider store={store}>
       <Component {...pageProps} />
