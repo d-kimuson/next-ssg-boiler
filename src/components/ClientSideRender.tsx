@@ -1,13 +1,12 @@
-import type { PropsWithChildren } from "react"
 import { PersistGate } from "redux-persist/integration/react"
 
 import { persistor } from "~/store"
 
-type ClientSideRenderProps = PropsWithChildren<{
+type ClientSideRenderProps = React.PropsWithChildren<{
   loading?: React.ReactNode
 }>
 
-export const ClientSideRender: React.FC<ClientSideRenderProps> = ({
+export const ClientSideRender: React.VFC<ClientSideRenderProps> = ({
   children,
   loading = null,
 }: ClientSideRenderProps) => {
