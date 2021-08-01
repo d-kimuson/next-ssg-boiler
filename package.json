@@ -19,12 +19,18 @@
     "fix:eslint": "yarn lint:eslint --fix",
     "fix:stylelint": "yarn lint:stylelint --fix",
     "fix:prettier": "prettier '**/*.{ts,tsx,js,jsx,json,css,scss}' --write",
-    "test": "jest"
+    "lint-staged": "lint-staged --allow-empty",
+    "test": "jest",
+    "prepare": "husky install"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn lint"
-    }
+  "lint-staged": {
+    "./**/*.{ts,tsx}": [
+      "bash -c 'yarn typecheck'",
+      "eslint --fix"
+    ],
+    "./**/*.{ts,tsx,js,json,css,scss}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@aspida/axios": "^1.7.1",
@@ -32,6 +38,7 @@
     "aspida": "^1.7.1",
     "axios": "^0.21.1",
     "immer": "^9.0.5",
+    "lint-staged": "^11.1.1",
     "modern-css-reset": "^1.4.0",
     "next": "^11.0.1",
     "react": "17.0.2",
