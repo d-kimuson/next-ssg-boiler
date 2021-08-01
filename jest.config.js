@@ -1,6 +1,11 @@
+const fs = require("fs")
+const stripJsonComments = require("strip-json-comments")
 const { pathsToModuleNameMapper } = require("ts-jest/utils")
 
-const { compilerOptions } = require("./tsconfig.json")
+// require で拾うとコメントが syntax error になるので
+const { compilerOptions } = JSON.parse(
+  stripJsonComments(fs.readFileSync("./tsconfig.json", "utf8"))
+)
 
 module.exports = {
   roots: ["<rootDir>"],
