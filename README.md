@@ -48,40 +48,6 @@ import { pagesPath } from "@path"
 <Link href={pagesPath.$url()}>click me</Link>
 ```
 
-## グローバルステート
-
-グローバルの状態管理に [Redux](https://redux.js.org/) を使います
-
-`useDispatch` は型付けされたカスタムフックが定義されているので、こちらを使用してください
-
-``` ts
-import { useDispatch } from "~/hooks/store"
-```
-
-`src/store/index.ts` で `whitelist` に追加するとステートがローカルストレージと同期します
-
-``` ts:src/store/index.ts
-const persistedReducer = persistReducer(
-  {
-    key: "root",
-    storage,
-    whitelist: ["example"],
-  },
-  rootReducer
-)
-```
-
-ローカルストレージから読みだしたステートで表示を出し分ける場合(ログインなど)は、`ClientSideRender` コンポーネントでラップすることでレンダリングを遅延できます
-
-``` tsx:sample-page.tsx
-import { ClientSideRender } from "~/components/ClientSideRender"
-
-<div>サーバーサイドでレンダリングされる</div>
-<ClientSideRender>
-  <div>クライアントサイドでレンダリングされる</div>
-</ClientSideRender>
-```
-
 ## テスト
 
 テストツールとして、[Jest](https://jestjs.io/) を導入しています

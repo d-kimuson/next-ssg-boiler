@@ -1,14 +1,22 @@
 import type { AppProps } from "next/app"
-import { Provider } from "react-redux"
+import Head from "next/head"
+import { RecoilRoot } from "recoil"
 
 import "~/styles/globals/index.scss"
-import { store } from "~/store"
 
 const MyApp: React.VFC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
-    <Provider store={store}>
-      <Component {...pageProps} />
-    </Provider>
+    <>
+      <Head>
+        <meta
+          name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width"
+        />
+      </Head>
+      <RecoilRoot>
+        <Component {...pageProps} />
+      </RecoilRoot>
+    </>
   )
 }
 

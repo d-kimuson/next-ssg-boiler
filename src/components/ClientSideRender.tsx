@@ -1,19 +1,12 @@
-import { PersistGate } from "redux-persist/integration/react"
+import { useIsSsr } from "~/hooks/util"
+import { Loading } from "./Loading"
 
-import { persistor } from "~/store"
-
-type ClientSideRenderProps = React.PropsWithChildren<{
-  loading?: React.ReactNode
-}>
+type ClientSideRenderProps = React.PropsWithChildren<Record<string, unknown>>
 
 export const ClientSideRender: React.VFC<ClientSideRenderProps> = ({
   children,
-  loading = null,
 }: ClientSideRenderProps) => {
-  // このコンポーネント以下のレンダリングをクライアントで行う
-  return (
-    <PersistGate loading={loading} persistor={persistor}>
-      {children}
-    </PersistGate>
-  )
+  const isSsr = useIsSsr()
+
+  return isSsr ? <Loading /> : <>{children}</>
 }

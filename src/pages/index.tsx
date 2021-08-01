@@ -1,15 +1,13 @@
 import Head from "next/head"
+import { useRecoilState } from "recoil"
 
 import styles from "~/styles/modules/Home.module.scss"
 import { Greet } from "~/components/Greet"
 import { ClientSideRender } from "~/components/ClientSideRender"
-import exampleSlice from "~/store/example"
-import { useDispatch } from "~/hooks/store"
-import { useUserName } from "~/hooks/store/example"
+import { exampleState } from "~/store/example"
 
 const Home: React.VFC = () => {
-  const userName = useUserName()
-  const dispatch = useDispatch()
+  const [exampleValue, setExampleValue] = useRecoilState(exampleState)
 
   return (
     <div className={styles.container}>
@@ -24,23 +22,23 @@ const Home: React.VFC = () => {
         </h1>
 
         <ClientSideRender>
-          <Greet name={userName ?? ""} />
+          <Greet name={exampleValue.userName ?? ""} />
         </ClientSideRender>
 
-        <Greet name={userName ?? ""} />
+        <Greet name={exampleValue.userName ?? ""} />
 
         <input
           type="text"
           placeholder="Input user name"
-          value={userName ?? ""}
+          value={exampleValue.userName ?? ""}
           onChange={(e) => {
-            dispatch(exampleSlice.actions.setUserName(e.target.value))
+            setExampleValue((prev) => ({ ...prev, userName: e.target.value }))
           }}
         />
 
         <button
           onClick={() => {
-            dispatch(exampleSlice.actions.resetUserName())
+            setExampleValue((prev) => ({ ...prev, userName: undefined }))
           }}
         >
           RESET
