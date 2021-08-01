@@ -14,11 +14,11 @@
     "lint": "yarn typecheck && run-p lint:*",
     "lint:eslint": "eslint src --ext .js,.ts,.tsx",
     "lint:stylelint": "stylelint 'src/styles/**/*.{css,scss}'",
-    "lint:prettier": "prettier '**/*.{ts,tsx,js,json,css,scss}' --check",
+    "lint:prettier": "prettier '**/*.{ts,tsx,js,json,css,scss,yml,yaml}' --check",
     "fix": "run-p fix:*",
     "fix:eslint": "yarn lint:eslint --fix",
     "fix:stylelint": "yarn lint:stylelint --fix",
-    "fix:prettier": "prettier '**/*.{ts,tsx,js,json,css,scss}' --write",
+    "fix:prettier": "prettier '**/*.{ts,tsx,js,json,css,scss,yml,yaml}' --write",
     "lint-staged": "lint-staged --allow-empty",
     "test": "jest",
     "prepare": "husky install"
@@ -28,7 +28,7 @@
       "bash -c 'yarn typecheck'",
       "eslint --fix"
     ],
-    "./**/*.{ts,tsx,js,json,css,scss}": [
+    "./**/*.{ts,tsx,js,json,css,scss,yml,yaml}": [
       "prettier --write"
     ]
   },
