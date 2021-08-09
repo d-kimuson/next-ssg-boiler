@@ -38,7 +38,7 @@
     "aspida": "^1.7.1",
     "axios": "^0.21.1",
     "immer": "^9.0.5",
-    "lint-staged": "^11.1.1",
+    "lint-staged": "^11.1.2",
     "modern-css-reset": "^1.4.0",
     "next": "^11.0.1",
     "react": "17.0.2",
