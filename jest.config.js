@@ -1,10 +1,25 @@
-const fs = require("fs")
-const stripJsonComments = require("strip-json-comments")
 const { pathsToModuleNameMapper } = require("ts-jest/utils")
+const {
+  readConfigFile,
+  parseJsonConfigFileContent,
+  sys,
+} = require("typescript")
 
 // require で拾うとコメントが syntax error になるので
-const { compilerOptions } = JSON.parse(
-  stripJsonComments(fs.readFileSync("./tsconfig.json", "utf8"))
+const configFile = readConfigFile("./tsconfig.json", sys.readFile)
+if (typeof configFile.error !== "undefined") {
+  throw new Error(`Failed to load tsconfig: ${configFile.error}`)
+}
+
+const { options } = parseJsonConfigFileContent(
+  configFile.config,
+  {
+    fileExists: sys.fileExists,
+    readFile: sys.readFile,
+    readDirectory: sys.readDirectory,
+    useCaseSensitiveFileNames: true,
+  },
+  __dirname
 )
 
 module.exports = {
@@ -15,8 +30,10 @@ module.exports = {
       tsconfig: "tests/tsconfig.json",
     },
   },
-  preset: "ts-jest",
-  moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, {
+  transform: {
+    "^.+\\.(t|j)s$": "esbuild-jest",
+  },
+  moduleNameMapper: pathsToModuleNameMapper(options.paths, {
     prefix: "<rootDir>/src",
   }),
 }
