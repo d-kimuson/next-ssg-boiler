@@ -1,8 +1,7 @@
-import type { AppProps } from "next/app"
 import Head from "next/head"
 import { RecoilRoot } from "recoil"
-
-import "~/styles/globals/index.scss"
+import type { AppProps } from "next/app"
+import foo from "~/styles/globals/index.scss"
 
 const MyApp: React.VFC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (

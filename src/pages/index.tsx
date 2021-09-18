@@ -1,10 +1,9 @@
 import Head from "next/head"
 import { useRecoilState } from "recoil"
-
-import styles from "~/styles/modules/Home.module.scss"
-import { Greet } from "~/components/Greet"
 import { ClientSideRender } from "~/components/ClientSideRender"
+import { Greet } from "~/components/Greet"
 import { exampleState } from "~/store/example"
+import styles from "~/styles/modules/Home.module.scss"
 
 const Home: React.VFC = () => {
   const [exampleValue, setExampleValue] = useRecoilState(exampleState)

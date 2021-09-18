@@ -1,6 +1,6 @@
 import React from "react"
 
-interface GreetProps {
+type GreetProps = {
   name: string
 }
 
