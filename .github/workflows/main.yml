@@ -32,6 +32,9 @@ jobs:
       - name: install dependencies
         run: yarn --check-files --frozen-lockfile --non-interactive
 
+      - name: lint
+        run: yarn lint
+
       - name: run tests
         run: yarn test
 

@@ -25,7 +25,6 @@
   },
   "lint-staged": {
     "./**/*.{ts,tsx}": [
-      "bash -c 'yarn typecheck'",
       "eslint --fix"
     ],
     "./**/*.{ts,tsx,js,json,css,scss,yml,yaml}": [
