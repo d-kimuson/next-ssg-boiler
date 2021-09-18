@@ -16,6 +16,7 @@ module.exports = {
       version: "detect",
     },
   },
+  ignorePatterns: ["**/*.d.ts"],
   overrides: [
     {
       files: ["*.ts", "*.tsx"],
