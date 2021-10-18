@@ -35,7 +35,7 @@
     "@aspida/axios": "^1.7.1",
     "@aspida/swr": "^1.7.1",
     "aspida": "^1.7.1",
-    "axios": "^0.22.0",
+    "axios": "^0.23.0",
     "immer": "^9.0.6",
     "lint-staged": "^11.2.3",
     "modern-css-reset": "^1.4.0",
