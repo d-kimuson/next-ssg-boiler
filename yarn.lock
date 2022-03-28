@@ -1448,10 +1448,10 @@
   dependencies:
     "@types/unist" "*"
 
-"@types/minimist@^1.2.0", "@types/minimist@^1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.1.tgz#283f669ff76d7b8260df8ab7a4262cc83d988256"
-  integrity sha512-fZQQafSREFyuZcdWFAExYjBiCL7AUCdgsk80iO0q4yihYYdcIiH28CcuPTGFgLOCC8RlW49GSQxdHwZP+I7CNg==
+"@types/minimist@^1.2.0", "@types/minimist@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@types/minimist/-/minimist-1.2.2.tgz#ee771e2ba4b3dc5b372935d549fd9617bf345b8c"
+  integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
 "@types/node@*", "@types/node@^16.11.12":
   version "16.11.12"
@@ -1820,12 +1820,12 @@ asn1.js@^5.2.0:
     minimalistic-assert "^1.0.0"
     safer-buffer "^2.1.0"
 
-aspida@^1.7.1:
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/aspida/-/aspida-1.7.1.tgz#b021e1766991b3b9a7b85f297f5ac05af4b42b60"
-  integrity sha512-YIfSeLHPAtIkWnu8QFfKvlPB0/S6sRjD2WgmHuiTbhvTdINqK0KMPNK8WepUORXmUcraSaeHN1xO5MMKTREiTA==
+aspida@^1.7.1, aspida@^1.9.1:
+  version "1.9.1"
+  resolved "https://registry.yarnpkg.com/aspida/-/aspida-1.9.1.tgz#e313be8d1e058b8e32d7a7d227fa73bde8085b56"
+  integrity sha512-jROy/70paxRwRknT40lAxXJmveSDkPZbudZlJH8kS+ACQ6Ub73cbDokxfl5iXx/c/FBkA8/RTkrtoofYx6Xscg==
   dependencies:
-    "@types/minimist" "^1.2.1"
+    "@types/minimist" "^1.2.2"
     chokidar "^3.5.1"
     form-data "^4.0.0"
     minimist "^1.2.5"
