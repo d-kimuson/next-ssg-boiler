@@ -34,7 +34,7 @@
   "dependencies": {
     "@aspida/axios": "^1.7.1",
     "@aspida/swr": "^1.7.1",
-    "aspida": "^1.7.1",
+    "aspida": "^1.9.1",
     "axios": "^0.24.0",
     "immer": "^9.0.12",
     "lint-staged": "^11.2.6",
