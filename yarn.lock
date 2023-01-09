@@ -9,10 +9,10 @@
   dependencies:
     aspida "^1.7.1"
 
-"@aspida/swr@^1.7.1":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@aspida/swr/-/swr-1.7.1.tgz#521efdd72ca239fb9cfa5fd0bd4645856774b66d"
-  integrity sha512-428RNW88CPr/qXxq5S8fhE5jx77eUwOIdWbeHdY5SWnPCdz3ijBZCNor9OhWnMb3E/IqJKfZCbEqyqTly3VBuw==
+"@aspida/swr@^1.11.0":
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/@aspida/swr/-/swr-1.11.0.tgz#50cd841936d4d5b41413a87d5bd81831620fa71b"
+  integrity sha512-GmR0VaUPWw9EaeMi96BSBf3Y7dGMxrPAD8z97/3ewsokpoKmK0FiX+SBt+ygGHKqqKRnCLwgQvfR0NEpTCMo8A==
   dependencies:
     aspida "^1.7.1"
 
