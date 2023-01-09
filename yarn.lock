@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@aspida/axios@^1.7.1":
-  version "1.7.1"
-  resolved "https://registry.yarnpkg.com/@aspida/axios/-/axios-1.7.1.tgz#e717ff358dc0cee736e2a31bace251ee0b78b3e2"
-  integrity sha512-2TNjvPAVhMAoe7YgfZawza0P0U4qMGLJdjW5H3BAIRv1B/TU929x2AO+ZrYroNZhI1wccDahVthuFHRgH8xTxw==
+"@aspida/axios@^1.11.0":
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/@aspida/axios/-/axios-1.11.0.tgz#66157bb003460ed9a02c4f1607fb0ce388d1894e"
+  integrity sha512-tsxkqCQPmPHlqVPW0BYwR7tHmmxbk8yEpOb6gn9bnqCe5riBDHLUiiWlde5+gSjWQAxx/TJ9AAlyciaL84vylw==
   dependencies:
     aspida "^1.7.1"
 
